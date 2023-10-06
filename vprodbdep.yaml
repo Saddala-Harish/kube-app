@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: vproapp
+  name: vprodb
   labels:
-    app: vproapp
+    app: vprodb
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: vproapp
+      app: vprodb
   template:
     metadata:
       labels:
-        app: vproapp
+        app: vprodb
     spec:
       containers:
-        - name: vproapp-container
+        - name: vprodb-container
           image: saddalaharish/vprofiledb:latest
           volumeMounts:
             - mountPath: /var/lib/mysql
